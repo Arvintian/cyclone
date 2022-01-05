@@ -26,7 +26,7 @@ function usage {
     printf "$template" "$total" "$used" ""
   else
     items=$(du -sh -- * | awk '{ printf("\"%s\":\"%s\"\n", $2, $1) }')
-    jsonItems=$(join_by , "${items[@]}")
+    jsonItems=$(join_by , ${items[@]})
     printf "$template" "$total" "$used"  "$jsonItems"
   fi
 }
